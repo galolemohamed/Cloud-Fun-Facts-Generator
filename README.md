@@ -4,6 +4,8 @@ A full-stack serverless web application that delivers random cloud computing fac
 
 ---
 
+![amplify-app-goes-live.jpg](amplify-app-goes-live.jpg)
+
 ## Architecture Flow
 
 User Browser  
