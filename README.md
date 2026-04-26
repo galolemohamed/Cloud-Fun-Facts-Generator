@@ -1,33 +1,17 @@
-# Cloud Fun Facts Generator
 
-### Full-Stack AWS Serverless Project | Recruiter-Ready Portfolio Build
+ ### CloudFunFacts – Serverless AWS Project
 
-A production-style AWS cloud project designed to showcase hands-on engineering ability using real AWS services.
+A full-stack serverless web application that delivers random cloud computing facts using AWS services.
 
-This repository demonstrates how I designed, built, secured, tested, and deployed a complete cloud-native application using modern serverless architecture.
+### Architecture Flow
 
-
----
-
-# 🌐 Live Product Idea
-
-Users open a website, click a button, and instantly receive a random cloud computing fact powered by AWS services.
-
----
-
-# 🏗️ Architecture
-
-```text
 User Browser
-   ↓
-AWS Amplify Hosting
-   ↓
-API Gateway HTTP API
-   ↓
-AWS Lambda (Python)
-   ↓
-Amazon DynamoDB
+→ AWS Amplify Hosting
+→ API Gateway (HTTP API)
+→ AWS Lambda (Python)
+→ Amazon DynamoDB
 
+---
 ### Tech Stack
 Category	Tools
 Cloud Platform	AWS
@@ -37,86 +21,81 @@ Database	DynamoDB
 Hosting	Amplify
 Security	IAM
 Language	Python
-Frontend	HTML / CSS / JavaScript
+Frontend	HTML 
 
-### Project Breakdown
-1️⃣ ### AWS Lambda Backend
+---
+### Features
+Random cloud facts generator
+Serverless backend architecture
+REST API integration
+Fully managed NoSQL database
+Global frontend hosting via Amplify
+Secure IAM-based access control
 
-Created a serverless Lambda function named:
+---
+### AWS Lambda Backend
+
+Created a serverless function:
 
 CloudFunFacts
-Responsibilities
+
+Responsibilities:
 Query DynamoDB
 Select a random fact
 Return JSON response
 Handle API requests
-Example Output
+Example Output:
 {
   "fact": "Netflix runs almost all infrastructure on AWS."
 }
 
-📸 Proof of Work
-Lambda Function Creation
+---
+ ### DynamoDB Database Layer
 
-Lambda Test Event Success
+Created a table:
 
-2️⃣ ### DynamoDB Database Layer
+CloudFacts
 
-Created a NoSQL database table:
-
-Table Name	Key
-CloudFacts	FactID
-Each Record Stores
-FactID
+Structure:
+FactID (Primary Key)
 FactText
 
-This allows content updates without touching backend code.
+Each record stores a cloud computing fact, allowing updates without modifying backend code.
 
-📸 Proof of Work
-DynamoDB Table
+---
+### IAM Security Configuration
 
-3️⃣ ### IAM Security Configuration
+Applied least-privilege permissions:
 
-Applied least-privilege permissions so Lambda can securely access required resources.
+CloudWatch Logs access
+DynamoDB read access
 
-Policies Configured
-CloudWatch Logs
-DynamoDB Read Access
-📸 Proof of Work
-DynamoDB Access Policy Added
+Ensures Lambda only accesses required resources.
 
+---
+### API Gateway
 
-4️⃣ ### API Gateway Public API
-
-Created an HTTP API:
+Created HTTP API:
 
 FunfactsAPI
-Route
+
+Route:
 GET /funfact
 
-This makes the Lambda publicly accessible.
+This exposes the Lambda function publicly.
 
-📸 Proof of Work
-API Endpoint Created
+---
+### Frontend (AWS Amplify)
 
-Public API Working
+A responsive web interface where users click a button to generate cloud facts.
+### Features:
+Clean UI design
+Mobile responsive layout
+Real-time API integration
+HTTPS secured hosting
 
-5️⃣ ### Frontend Hosted on AWS Amplify
-
-Built a responsive frontend where users click a button to generate cloud facts.
-
-### Features
-Clean modern UI
-Mobile responsive
-Live backend integration
-Hosted globally
-HTTPS enabled
-📸 Proof of Work
-Amplify Deployment Dashboard
-
-Live Application Running
-
-### Core Lambda Code
+---
+### Lambda Function Code
 import boto3
 import random
 import json
@@ -134,61 +113,51 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "headers": {"Content-Type": "application/json"},
         "body": json.dumps({"fact": fact})
-        }
-
+    }
+--- 
 ### Skills Demonstrated
 Cloud Engineering
 AWS multi-service integration
-Serverless design
-Scalable architecture
-Cost-efficient deployments
+Serverless architecture
+Scalable system design
 Security
 IAM least privilege
-Controlled access management
+Controlled resource access
 Backend Development
-Python Lambda functions
-JSON APIs
+Python (Lambda)
+REST APIs
 AWS SDK (Boto3)
-
-### Frontend Development
+Frontend Development
 JavaScript API calls
-Responsive design
-User interaction workflows
+Responsive UI design
 DevOps Mindset
+Deployment
 Testing
 Debugging
-Deployment
-Monitoring awareness
+Cloud hosting
 
+---
 ### What I Learned
+Building serverless applications on AWS
+Integrating multiple cloud services
+Deploying full-stack applications
+Managing cloud security policies
+Designing scalable architectures
 
-Through this build I gained real-world experience in:
-
-Building serverless applications
-Connecting managed AWS services
-Solving deployment issues
-Hosting public web apps
-Working with cloud security controls
-Delivering end-to-end products
-
-🔮 Future Improvements
-
-### Planned next versions
-
-Amazon Bedrock AI generated facts
+---
+### Future Improvements
+Amazon Bedrock AI-generated facts
 User authentication with Cognito
-CI/CD pipelines
-Terraform IaC
-Monitoring dashboards
-Custom domain
+CI/CD pipeline (GitHub Actions)
+Infrastructure as Code (Terraform)
+Cloud monitoring dashboard
+Custom domain setup
 Usage analytics
 
+---
+📸 Repository Assets
 
-Built and deployed a full-stack AWS serverless application using Lambda, API Gateway, DynamoDB, IAM, and Amplify, delivering a publicly accessible cloud-native web application with secure backend integrations.
-
-📸 Repository Screenshot Assets
-
-Ensure these files remain inside the repository root:
+Keep these files in the root directory:
 
 test-event.jpg
 Dynamo-table.jpg
@@ -199,4 +168,3 @@ bedrock-policy.jpg
 API-Endpoint.jpg
 amplify-app-goes-live.jpg
 amplify-app-deployed.jpg
-
