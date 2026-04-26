@@ -4,7 +4,7 @@ A full-stack serverless web application that delivers random cloud computing fac
 
 ---
 
-![amplify-app-goes-live.jpg](amplify-app-goes-live.jpg)
+![screenshots/amplify-app-goes-live.jpg](screenshots/amplify-app-goes-live.jpg)
 
 ## Architecture Flow
 
@@ -63,7 +63,7 @@ Created a serverless function:
 }
 ```
 ---
-![Lambda Function](function-creation.jpg)
+![screenshots/function-creation.jpg](screenshots/function-creation.jpg)
 
 ### DynamoDB Database Layer
 
@@ -77,7 +77,7 @@ FactText
 
 Each record stores a cloud computing fact, allowing updates without modifying backend code.
 
-![DynamoDB Table](Dynamo-table.jpg)
+![screenshots/DynamoDB Table](screenshots/Dynamo-table.jpg)
 
 IAM Security Configuration
 
@@ -102,7 +102,7 @@ GET /funfact
 
 This exposes the Lambda function publicly.
 
-![API Endpoint](API-Endpoint.jpg)
+![screenshots/API-Endpoint](screenshots/API-Endpoint.jpg)
 
 ### Frontend (AWS Amplify)
 
@@ -137,7 +137,7 @@ def lambda_handler(event, context):
     }
 ```
 ---
-![test-event.jpg](test-event.jpg)
+![test-event.jpg](screenshots/test-event.jpg)
 
 ### Skills Demonstrated
 Cloud Engineering
@@ -179,14 +179,14 @@ Custom domain setup
 Usage analytics
 
 ---
-![funfact-accessible.jpg](funfact-accessible.jpg)
+![funfact-accessible.jpg](screenshots/funfact-accessible.jpg)
 
 Project Screenshots Gallery
 
-![function-creation.jpg](function-creation.jpg)
+![function-creation.jpg](screenshots/function-creation.jpg)
 
-![Dynamo-table.jpg](Dynamo-table.jpg)
+![Dynamo-table.jpg](screenshots/Dynamo-table.jpg)
 
-![API-Endpoint.jpg](API-Endpoint.jpg)
+![API-Endpoint.jpg](screenshots/API-Endpoint.jpg)
 
-![amplify-app-goes-live.jpg](amplify-app-goes-live.jpg)
+![amplify-app-goes-live.jpg](screenshots/amplify-app-goes-live.jpg)
