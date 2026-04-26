@@ -1,56 +1,69 @@
-
- ### CloudFunFacts – Serverless AWS Project
+# CloudFunFacts – Serverless AWS Project
 
 A full-stack serverless web application that delivers random cloud computing facts using AWS services.
 
-### Architecture Flow
+---
 
-User Browser
-→ AWS Amplify Hosting
-→ API Gateway (HTTP API)
-→ AWS Lambda (Python)
-→ Amazon DynamoDB
+## Architecture Flow
+
+User Browser  
+→ AWS Amplify Hosting  
+→ API Gateway (HTTP API)  
+→ AWS Lambda (Python)  
+→ Amazon DynamoDB  
 
 ---
-### Tech Stack
-Category	Tools
-Cloud Platform	AWS
-Compute	Lambda
-API Layer	API Gateway
-Database	DynamoDB
-Hosting	Amplify
-Security	IAM
-Language	Python
-Frontend	HTML 
+
+## Tech Stack
+
+| Category | Tools |
+|----------|------|
+| Cloud Platform | AWS |
+| Compute | Lambda |
+| API Layer | API Gateway |
+| Database | DynamoDB |
+| Hosting | Amplify |
+| Security | IAM |
+| Language | Python |
+| Frontend | HTML |
 
 ---
-### Features
-Random cloud facts generator
-Serverless backend architecture
-REST API integration
-Fully managed NoSQL database
-Global frontend hosting via Amplify
-Secure IAM-based access control
+
+## Features
+
+- Random cloud facts generator  
+- Serverless backend architecture  
+- REST API integration  
+- Fully managed NoSQL database  
+- Global frontend hosting via Amplify  
+- Secure IAM-based access control  
 
 ---
-### AWS Lambda Backend
+
+## AWS Lambda Backend
 
 Created a serverless function:
 
-CloudFunFacts
+**CloudFunFacts**
 
-Responsibilities:
-Query DynamoDB
-Select a random fact
-Return JSON response
-Handle API requests
-Example Output:
+### Responsibilities:
+
+- Query DynamoDB  
+- Select a random fact  
+- Return JSON response  
+- Handle API requests  
+
+### Example Output:
+
+```
 {
   "fact": "Netflix runs almost all infrastructure on AWS."
 }
-
+```
 ---
- ### DynamoDB Database Layer
+![Lambda Function](function-creation.jpg)
+
+### DynamoDB Database Layer
 
 Created a table:
 
@@ -62,8 +75,9 @@ FactText
 
 Each record stores a cloud computing fact, allowing updates without modifying backend code.
 
----
-### IAM Security Configuration
+![DynamoDB Table](Dynamo-table.jpg)
+
+IAM Security Configuration
 
 Applied least-privilege permissions:
 
@@ -72,30 +86,35 @@ DynamoDB read access
 
 Ensures Lambda only accesses required resources.
 
----
-### API Gateway
+IAM Policy Screenshot
+
+API Gateway
 
 Created HTTP API:
 
 FunfactsAPI
 
 Route:
+
 GET /funfact
 
 This exposes the Lambda function publicly.
 
----
+![API Endpoint](API-Endpoint.jpg)
+
 ### Frontend (AWS Amplify)
 
 A responsive web interface where users click a button to generate cloud facts.
-### Features:
+
+Features:
 Clean UI design
 Mobile responsive layout
 Real-time API integration
 HTTPS secured hosting
+Amplify Deployment Screenshots
 
----
-### Lambda Function Code
+Lambda Function Code
+```
 import boto3
 import random
 import json
@@ -114,7 +133,10 @@ def lambda_handler(event, context):
         "headers": {"Content-Type": "application/json"},
         "body": json.dumps({"fact": fact})
     }
---- 
+```
+---
+![test-event.jpg](test-event.jpg)
+
 ### Skills Demonstrated
 Cloud Engineering
 AWS multi-service integration
@@ -155,16 +177,14 @@ Custom domain setup
 Usage analytics
 
 ---
-📸 Repository Assets
+![funfact-accessible.jpg](funfact-accessible.jpg)
 
-Keep these files in the root directory:
+Project Screenshots Gallery
 
-test-event.jpg
-Dynamo-table.jpg
-dynamodb-access-policy-aded.jpg
-function-creation.jpg
-funfact-accessible.jpg
-bedrock-policy.jpg
-API-Endpoint.jpg
-amplify-app-goes-live.jpg
-amplify-app-deployed.jpg
+![function-creation.jpg](function-creation.jpg)
+
+![Dynamo-table.jpg](Dynamo-table.jpg)
+
+![API-Endpoint.jpg](API-Endpoint.jpg)
+
+![amplify-app-goes-live.jpg](amplify-app-goes-live.jpg)
